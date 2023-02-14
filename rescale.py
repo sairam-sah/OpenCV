@@ -1,3 +1,4 @@
+from logging import captureWarnings
 import cv2 as cv
 
 img = cv.imread('photos/cat.webp')
@@ -5,23 +6,23 @@ img = cv.imread('photos/cat.webp')
 cv.imshow('cat', img)
 
 
-def rescaleFrame(frame, scale=0.75):
-    width = int(frame.shape[1] * scale)
-    height = int(frame.shape[0] * scale) 
+# def rescaleFrame(frame, scale=0.75):
+#     width = int(frame.shape[1] * scale)
+#     height = int(frame.shape[0] * scale) 
 
-    dimensions = (width, height)
+#     dimensions = (width, height)
     
-    return cv.resize(frame, dimensions, interpolation=cv.INTER_AREA)
+#     return cv.resize(frame, dimensions, interpolation=cv.INTER_AREA)
 
-resized_image = rescaleFrame(img)
-cv.imshow('Image', resized_image)
-def changeRes(width,height):
+# resized_image = rescaleFrame(img)
+# cv.imshow('Image', resized_image)
+# def changeRes(width,height):
     
-      Reading videos
-capture = cv. VideoCapture('videos/baby.mp4')
+    #Reading videos
+ capture = cv.VideoCapture('videos/baby.mp4')
 
 while True:
-     isTrue, frame  =capture .read()
+     isTrue, frame  =captureWarnings .read()
 
      frame_resized = rescaleFrame(frame,scale=0.3)
 
