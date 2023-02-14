@@ -4,7 +4,7 @@ import numpy as np
 img = cv.imread('photos/cat.webp')
 cv.imshow('cat', img)
 
-blank = np.zeros(img.shape[:2], dtype='uint8')
+blank = np.zeros(img.shape, dtype='uint8')
 cv.imshow('blank',blank)
 
 gray =cv.cvtColor(img, cv.COLOR_BGR2GRAY)
@@ -27,6 +27,6 @@ print(f'{len(contours)} countour(s) found!')
 
 
 
-cv.drawCountours(blank, contours, -1, (0,0,255),2)
+cv.drawContours(blank, contours, -1, (0,0,255),2)
 cv.imshow('Countours Drawn', blank)
 cv.waitKey(0)
